@@ -1,0 +1,9 @@
+./KODEL ../Scan001665_HV1_DAQ.root ../config/MAP-001662-001670.txt 1, 0, 0
+./KODEL ../Scan001665_HV2_DAQ.root ../config/MAP-001662-001670.txt 1, 0, 0
+./KODEL ../Scan001665_HV3_DAQ.root ../config/MAP-001662-001670.txt 1, 0, 0
+./KODEL ../Scan001665_HV4_DAQ.root ../config/MAP-001662-001670.txt 1, 0, 0
+./KODEL ../Scan001665_HV5_DAQ.root ../config/MAP-001662-001670.txt 1, 0, 0
+./KODEL ../Scan001665_HV6_DAQ.root ../config/MAP-001662-001670.txt 1, 0, 0
+./KODEL ../Scan001665_HV7_DAQ.root ../config/MAP-001662-001670.txt 1, 0, 0
+./KODEL ../Scan001665_HV8_DAQ.root ../config/MAP-001662-001670.txt 1, 0, 0
+./KODEL ../Scan001665_HV9_DAQ.root ../config/MAP-001662-001670.txt 1, 0, 0
