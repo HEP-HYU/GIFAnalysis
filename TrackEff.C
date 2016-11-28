@@ -5,7 +5,7 @@
 //         Created:  2015 Oct 14
 //
 
-void TrackEff(string last_hv_root, string trigger_condition, string eff_dec){
+TGraphError TrackEff(string last_hv_root, string trigger_condition, string eff_dec){
 
    gROOT->Reset();
    gROOT->SetStyle("Plain");
@@ -111,5 +111,25 @@ void TrackEff(string last_hv_root, string trigger_condition, string eff_dec){
    graph_Plot->SetLineWidth(1);
    graph_Plot->Draw("lpe");
     
-   c_eff->SaveAs(Form("Eff_%s.png",eff_dec.c_str()));
+   return graph_Plot;
+   //c_eff->SaveAs(Form("Eff_%s.png",eff_dec.c_str()));
+}
+
+void totalEff(){
+   TCanvas * c = new TCanvas("c","c",1);
+   
+   TGraphErrors* graph_Plot1 = TrackEff("ABS010/Scan001662_HV9_DAQ-Trk.root","s1&&s3&&s4","s5");
+   TGraphErrors* graph_Plot2 = TrackEff("ABS022/Scan001662_HV9_DAQ-Trk.root","s1&&s3&&s4","s5");
+   TGraphErrors* graph_Plot3 = TrackEff("ABS069/Scan001662_HV9_DAQ-Trk.root","s1&&s3&&s4","s5");
+   TGraphErrors* graph_Plot4 = TrackEff("ABS220/Scan001662_HV9_DAQ-Trk.root","s1&&s3&&s4","s5");
+   graph_Plot1->Draw();
+   graph_Plot2->Draw("same");
+   graph_Plot3->Draw("same");
+   graph_Plot4->Draw("same");
+   graph_Plot1->SetLineColor(2);
+   graph_Plot2->SetLineColor(3);
+   graph_Plot3->SetLineColor(4);
+   graph_Plot4->SetLineColor(5);
+   
+   c->SaveAs("eff.png");
 }
