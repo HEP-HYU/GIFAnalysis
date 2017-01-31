@@ -110,6 +110,10 @@ void TrackEff(string last_hv_root, string trigger_condition, string eff_dec){
    graph_Plot->SetLineColor(1);
    graph_Plot->SetLineWidth(1);
    graph_Plot->Draw("lpe");
-    
-   c_eff->SaveAs(Form("Eff_%s.png",eff_dec.c_str()));
+   
+   c_eff->SaveAs(Form("Eff_%s_ABS010.png",eff_dec.c_str()));
+
+   TFile *fout = TFile::Open("Efficiency_plot_ABS010.root", "RECREATE");
+   fout->cd();
+   graph_Plot->Write();
 }
